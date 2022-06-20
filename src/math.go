@@ -1,4 +1,4 @@
-package math
+package genlib
 
 import (
 	"math"
@@ -367,6 +367,10 @@ func CombineRangesIfOverlap[T Real](startA, endA, startB, endB T) (overlap bool,
 		return false, 0, 0
 	}
 	return true, Min(startA, startB), Max(endA, endB)
+}
+
+func Truthy[T Real](val T) bool {
+	return val != T(0)
 }
 
 func QNaN32() float32 {
